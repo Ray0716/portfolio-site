@@ -1,0 +1,15 @@
+{{- $dir := .Get "dir" | default "/img/photography" -}}
+{{- $staticDir := printf "static%s" $dir -}}
+<div class="photography-gallery gallery">
+  {{- range os.ReadDir $staticDir -}}
+    {{- if not .IsDir -}}
+      {{- $ext := lower (path.Ext .Name) -}}
+      {{- if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") (eq $ext ".webp") (eq $ext ".gif") -}}
+        {{- $src := printf "%s/%s" $dir .Name -}}
+        <figure>
+          <img src="{{ $src | relURL }}" alt="{{ replace (path.BaseName .Name) "-" " " }}" loading="lazy">
+        </figure>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+</div>

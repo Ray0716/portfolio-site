@@ -1,0 +1,59 @@
+baseURL = "https://example.com/"
+title = "Ray Tang • "
+languageCode = "en"
+theme = "tokiwa"
+hasCJKLanguage = true
+enableInlineShortcodes = true
+
+# No tag/category/RSS pages are needed for a portfolio
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[markup]
+  [markup.highlight]
+    style = "monokailight"
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[params]
+  favicon = "img/favicon-32x32.png"
+  bannerFont = "fonts/exampleFont"   # used for the site title in the top-left
+  math = false                       # set `math = true` in a page's front matter to load KaTeX on that page
+
+  # Contact form: create a free form at https://formspree.io and paste its URL here.
+  [params.contact]
+    formAction = "https://formspree.io/f/YOUR_FORM_ID"
+
+  # Icons shown on the Contact page. Any icon in themes/tokiwa/layouts/partials/svg
+  # works by its name without "-line.svg". Delete a line to hide that icon.
+  [params.social]
+    github = "https://github.com/Ray0716"
+    linkedin = "https://www.linkedin.com/r-tang"
+    instagram = "https://www.instagram.com/ruirui0716__"
+    mail = "mailto:raytang11792@gmail.com"
+
+# Left navbar, in this order
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 1
+[[menu.main]]
+  name = "Research"
+  url = "/research/"
+  weight = 2
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 3
+[[menu.main]]
+  name = "Piano"
+  url = "/piano/"
+  weight = 4
+[[menu.main]]
+  name = "Creative"
+  url = "/creative/"
+  weight = 5
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 6

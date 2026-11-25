@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article>
+	<h1 class="page-title">{{ .Title }}</h1>
+	{{ if .Params.toc }}
+	<details class="toc" open>
+		<summary>Contents</summary>
+		{{ .TableOfContents }}
+	</details>
+	{{ end }}
+	<div class="c-rich-text">
+		{{- .Content -}}
+	</div>
+
+	{{ if eq .Section "projects" }}
+	<hr>
+	<div class="pager">
+		{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">&larr; {{ .Title }}</a>{{ else }}<span></span>{{ end }}
+		{{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} &rarr;</a>{{ end }}
+	</div>
+	{{ end }}
+</article>
+{{ end }}

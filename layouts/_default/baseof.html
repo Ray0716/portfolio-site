@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1" />
+    <title>
+      {{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title
+      }}{{ end }}
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Serif:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    {{ with site.Params.favicon }}
+    <link rel="icon" href="{{ . | relURL }}" type="image/png" />
+    {{ end }} {{/* One plain CSS file. Hugo serves and live-reloads it itself:
+    no npm, no webpack, no Tailwind. */}} {{ $css := resources.Get
+    "css/main.css" }} {{ if not hugo.IsServer }}{{ $css = $css | minify |
+    fingerprint }}{{ end }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+
+    {{ if or .Params.math site.Params.math }}{{ partial "math.html" . }}{{ end
+    }}
+  </head>
+  <body>
+    <div class="layout">
+      <header class="layout-nav">{{ partial "site-header.html" . }}</header>
+      <main class="layout-main">{{ block "main" . }}{{ end }}</main>
+    </div>
+  </body>
+</html>

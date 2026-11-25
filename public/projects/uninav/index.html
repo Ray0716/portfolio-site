@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1" />
+    <title>
+      Uninav | Ray Tang • 
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Serif:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link rel="icon" href="/img/favicon-32x32.png" type="image/png" />
+       
+    <link rel="stylesheet" href="/css/main.css" />
+
+    
+  </head>
+  <body>
+    <div class="layout">
+      <header class="layout-nav"><h1 class="site-title">
+	<a href="/" title="Ray Tang • " class="icon"><span>Ray Tang •  <img src="/img/chineseName.png" alt="" style="display: inline-block; height: 0.95em; width: auto; vertical-align: middle"></span></a>
+</h1>
+<nav aria-label="Main">
+	<ul class="nav">
+		
+		
+		<li>
+			<a href="/about/" title="About page"
+				>About</a>
+		</li>
+		
+		<li>
+			<a href="/research/" title="Research page"
+				>Research</a>
+		</li>
+		
+		<li>
+			<a href="/projects/" title="Projects page"
+				class="active" aria-current="page">Projects</a>
+		</li>
+		
+		<li>
+			<a href="/piano/" title="Piano page"
+				>Piano</a>
+		</li>
+		
+		<li>
+			<a href="/creative/" title="Creative page"
+				>Creative</a>
+		</li>
+		
+		<li>
+			<a href="/contact/" title="Contact page"
+				>Contact</a>
+		</li>
+		
+	</ul>
+</nav>
+</header>
+      <main class="layout-main">
+<article>
+	<h1 class="page-title">Uninav</h1>
+	
+	<div class="c-rich-text"><p><a href="/projects/" style="float: right; font-size: 0.875rem; margin:0;">← Back to Projects</a>
+<img src="/img/projects/uninav/cover.png" alt="Uninav"></p>
+<p><small>In collaboration with Max Peng, Enya Chen and Connie Huang<br>Jan 2024</small></p>
+<p>• Developed Uninav, a website that scrapes Common Data Set data from universities and uses it to help students find appropriate colleges
+• Many existing sites like Naviance and Schoolinks do not take CDS data into account
+• UniNav aggregates data like SAT percentile, AP Scores, first gen consideration etc;, weighs them, and reccomends colleges
+• Peaceful flower-themes User Interface</p>
+<style>
+.uninav-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.uninav-gallery button {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+.uninav-gallery img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+.uninav-gallery button::after {
+  content: "Click to expand";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.uninav-gallery button:hover::after,
+.uninav-gallery button:focus-visible::after { opacity: 1; }
+.uninav-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  place-items: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.85);
+  cursor: zoom-out;
+}
+.uninav-lightbox.open { display: grid; }
+.uninav-lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+@media (max-width: 700px) {
+  .uninav-gallery { grid-template-columns: 1fr; }
+}
+</style>
+<div class="uninav-gallery">
+  <button type="button" data-full="/img/projects/uninav/data.png"><img src="/img/projects/uninav/data.png" alt="Uninav data"></button>
+  <button type="button" data-full="/img/projects/uninav/results.png"><img src="/img/projects/uninav/results.png" alt="Uninav results"></button>
+  <button type="button" data-full="/img/projects/uninav/ui1.png"><img src="/img/projects/uninav/ui1.png" alt="Uninav interface one"></button>
+  <button type="button" data-full="/img/projects/uninav/ui2.png"><img src="/img/projects/uninav/ui2.png" alt="Uninav interface two"></button>
+</div>
+<div class="uninav-lightbox" id="uninav-lightbox" role="dialog" aria-modal="true" aria-label="Expanded project image">
+  <img src="" alt="Expanded Uninav screenshot">
+</div>
+<script>
+(function () {
+  const lightbox = document.getElementById("uninav-lightbox");
+  const lightboxImage = lightbox.querySelector("img");
+
+  document.querySelectorAll(".uninav-gallery button").forEach(function (button) {
+    button.addEventListener("click", function () {
+      lightboxImage.src = button.dataset.full;
+      lightbox.classList.add("open");
+    });
+  });
+
+  lightbox.addEventListener("click", function () {
+    lightbox.classList.remove("open");
+    lightboxImage.src = "";
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      lightbox.classList.remove("open");
+      lightboxImage.src = "";
+    }
+  });
+})();
+</script>
+</div>
+
+	
+	<hr>
+	<div class="pager">
+		<span></span>
+		<a href="/projects/aircontrol/">AirControl: Vision-Based Gesture Control &rarr;</a>
+	</div>
+	
+</article>
+</main>
+    </div>
+  </body>
+</html>

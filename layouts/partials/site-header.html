@@ -1,0 +1,14 @@
+<h1 class="site-title">
+	<a href="{{ "/" | relURL }}" title="{{ site.Title }}" class="icon"><span>{{ site.Title }} <img src="{{ "/img/chineseName.png" | relURL }}" alt="" style="display: inline-block; height: 0.95em; width: auto; vertical-align: middle"></span></a>
+</h1>
+<nav aria-label="Main">
+	<ul class="nav">
+		{{ $current := . }}
+		{{ range site.Menus.main }}
+		<li>
+			<a href="{{ .URL }}" title="{{ .Name }} page"
+				{{ if or (eq $current.RelPermalink .URL) (hasPrefix $current.RelPermalink .URL) }}class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+		</li>
+		{{ end }}
+	</ul>
+</nav>
