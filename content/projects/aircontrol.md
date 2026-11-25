@@ -14,7 +14,7 @@ weight = 6
 
 • Integrated Google's MediaPipe hand tracking with OpenCV to extract and track hand landmarks in real time, translating recognized gestures into computer inputs through Python and PyAutoGUI.
 
-• Implemented gesture-based cursor control, mouse clicking, click-and-drag interactions, and application navigation using hand movements and distinct finger configurations.
+• Implemented gesture-based cursor control, mouse clicking, click-and-drag interactions, and app navigation using hand movements and distinct finger configurations.
 
 • Designed an accessible, hardware-independent interaction system intended to make computer workflows more intuitive and provide an alternative input method for users with limited access to traditional mouse and keyboard interfaces.
 
