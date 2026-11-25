@@ -15,7 +15,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
     unsafe = true
 
 [params]
-  favicon = "img/favicon-32x32.png"
+  favicon = "img/favicon.png"
   bannerFont = "fonts/exampleFont"   # used for the site title in the top-left
   math = false                       # set `math = true` in a page's front matter to load KaTeX on that page
 
