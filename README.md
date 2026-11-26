@@ -5,7 +5,7 @@ This repository offers an example site for [Hugo](https://gohugo.io/) and also i
 # Using
 
 1. [Install Hugo](https://gohugo.io/installation/)
-2. Clone this repository
+2. Clone this repository.
 ```bash
 git clone https://github.com/gohugoio/hugoBasicExample.git
 cd hugoBasicExample
